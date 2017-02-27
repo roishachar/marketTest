@@ -1,0 +1,121 @@
+<app-toast [message]="toast.message"></app-toast>
+
+
+<div class="card" *ngIf="!isEditing">
+  <div class="display-td">
+    <img class="img-responsive pull-right" src="http://i76.imgup.net/accepted_c22e0.png">
+  </div>
+  <h4 class="card-header">Payment Details</h4>
+  <div class="card-block">
+
+    <div class="container">
+      <div class="row">
+        <!-- You can make it whatever width you want. I'm making it full width
+        on <= small devices and 4/12 page width on >= medium devices -->
+        <div class="col-xs-8 col-md-8 center-block ">
+
+
+          <!-- CREDIT CARD FORM STARTS HERE -->
+          <div class="panel panel-default credit-card-box">
+            <div class="panel-heading display-table">
+              <div class="row display-tr">
+                <h3 class="panel-title display-td">Credit</h3>
+                <div class="display-td">
+                  <img class="img-responsive pull-right" src="http://i76.imgup.net/accepted_c22e0.png">
+                </div>
+              </div>
+            </div>
+            <div class="panel-body">
+              <form role="form" [formGroup]="addPayForm" (ngSubmit)="addPay()" id="payment-form">
+                <div class="row">
+                  <div class="col-xs-12">
+                    <div class="form-group">
+                      <label>CARD NUMBER</label>
+                      <div class="input-group">
+                        <input
+                          type="number"
+                          class="form-control"
+                          name="creditcard" formControlName="creditcard" placeholder="creditcard"
+                        />
+                        <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-7 col-md-7">
+
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-7 col-md-7">
+                    <div class="form-group">
+                      <label><span class="hidden-xs">First Name</span></label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="firstname" formControlName="firstname" placeholder="firstname"
+                        autocomplete="cc-exp"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="col-xs-5 col-md-5 pull-right">
+                    <div class="form-group">
+                      <label>Last Name</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="lastname" formControlName="lastname" placeholder="lastname"
+                        autocomplete="cc-csc"
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-12">
+                    <div class="form-group">
+                      <label>Email</label>
+                      <input type="text" class="form-control" name="email" name="email" formControlName="email"
+                             placeholder="email"/>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-12">
+                    <div class="form-group">
+                      <label>Location</label>
+                      <input type="text" class="form-control" name="location" formControlName="location"
+                             placeholder="location"/>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-12">
+                    <button class="btn btn-success btn-lg btn-block" type="submit">Start Subscription</button>
+                  </div>
+                </div>
+                <div class="row" style="display:none;">
+                  <div class="col-xs-12">
+                    <p class="payment-errors"></p>
+                  </div>
+                </div>
+
+          <!-- CREDIT CARD FORM ENDS HERE -->
+              </form>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-xs-4 col-md-4 center-block pull-right ">
+          <img align="center" src="../../assets/is.png" class="img-fluid pull-right" alt="Responsive image">
+        </div>
+
+      </div>
+    </div>
+
+
+  </div>
+</div>
+

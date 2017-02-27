@@ -1,0 +1,40 @@
+<div class="card">
+  <h5 class="card-header">Back-Office Records</h5>
+  <div #titleInput class="card-block">
+    <ul>
+      <ul>
+        <table class="table table-bordered table-striped">
+          <thead class="thead-default">
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Location</th>
+            <th>Credit Card</th>
+            <th>Action</th>
+          </tr>
+          </thead>
+          <tbody *ngIf="pays.length === 0">
+          <tr>
+            <td colspan="6">No Payments Yet :-(</td>
+          </tr>
+          </tbody>
+          <tbody *ngIf="!isEditing">
+          <tr *ngFor="let pay of pays">
+            <td>{{pay.firstname}}</td>
+            <td>{{pay.lastname}}</td>
+            <td>{{pay.email}}</td>
+            <td>{{pay.location}}</td>
+            <td>{{pay.creditcard}}</td>
+            <td>
+              <button class="btn btn-sm btn-danger" (click)="deletePay(pay)"><i class="fa fa-2x fa-trash"></i>
+              </button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </ul>
+    </ul>
+  </div>
+</div>
+
